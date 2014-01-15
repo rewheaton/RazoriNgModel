@@ -21,13 +21,13 @@ This walkthrough assumes you have already set up Angular on your page and just w
 
 1. Add 'razoring-model.js' to your page using [Bundling](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification) or script tag.
 2. Add 'data-ng-model-name' to a container of the form.  The attribute value should be the name of your Model object.  In the case of the demo, we use 'person':
-	<div data-ng-model-name="person">
-    @using (Html.BeginForm()) {
-    ...
-	</div>
+		<div data-ng-model-name="person">
+    	@using (Html.BeginForm()) {
+    	...
+		</div>
 3. Call 'setupRazoringModel();' before initializing Angular
-	// Call setup method before initializing Angular:
-    setupRazoringModel();
+		// Call setup method before initializing Angular:
+    	setupRazoringModel();
 
     var razoriNgModelDemoApp = angular.module("RazoriNgModelDemo", []);
 4. Load the page and verify that all the form inputs have the correct 'ng-model' attribute.  Remember, it's based of the 'name' attribute.
