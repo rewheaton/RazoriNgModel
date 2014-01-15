@@ -24,8 +24,32 @@ This walkthrough assumes you have already set up Angular on your page and just w
 		
 		<div data-ng-model-name="person">
     	@using (Html.BeginForm()) {
-    	...
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+	        <fieldset>
+	            <legend>Person</legend>
+
+	            <div class="editor-label">
+	                @Html.LabelFor(model => model.Name)
+	            </div>
+	            <div class="editor-field">
+	                @Html.EditorFor(model => model.Name)
+	                @Html.ValidationMessageFor(model => model.Name)
+	            </div>
+
+	            <div class="editor-label">
+	                @Html.LabelFor(model => model.AddressLine1)
+	            </div>
+	            <div class="editor-field">
+	                @Html.EditorFor(model => model.AddressLine1)
+	                @Html.ValidationMessageFor(model => model.AddressLine1)
+	            </div>
+	           	...
+	        </fieldset>
+   		}
 		</div>
+		
 3. Call `setupRazoringModel();` before initializing Angular.
     	
     	setupRazoringModel();
