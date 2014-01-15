@@ -20,12 +20,14 @@ The demo/ folder contains a scaffolded MVC 4 project built in Visual Studio 2012
 This walkthrough assumes you have already set up Angular on your page and just want to add RazoriNgModel to your app.  For more info on Angular, click [here](http://angularjs.org/).
 
 1. Add `razoring-model.js` to your page using [Bundling](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification) or script tag.
-2. Add `data-ng-model-name` to a container of the form.  The attribute value should be the name of your Model object.  In the case of the demo, we use 'person':
+2. Add a `data-ng-model-name=''` attribute to a container of the form.  The attribute value should be the name of your Model object.  In the case of the demo, we use 'person':
+		
 		<div data-ng-model-name="person">
     	@using (Html.BeginForm()) {
     	...
 		</div>
-3. Call `setupRazoringModel();` before initializing Angular
+3. Call `setupRazoringModel();` before initializing Angular.
+    	
     	setupRazoringModel();
 
     	var razoriNgModelDemoApp = angular.module("RazoriNgModelDemo", []);
